@@ -12,3 +12,4 @@ function calculateNumberOfFlights(NumPassengers,flightCap){
 return{calculateNumberOfFlights};
 }
 
+module.exports = Flights();
