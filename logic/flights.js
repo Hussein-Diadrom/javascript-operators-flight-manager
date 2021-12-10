@@ -14,7 +14,25 @@ function calculateNumberOfFlights(NumPassengers,flightCap){
     }
     return n ; 
 }
-return{calculateNumberOfFlights};
+
+function checkAircraftRevision(distanceLimit,distancesArray){
+    let sum = 0; 
+    for (let index = 0; index < distancesArray.length; index++) {
+        sum +=distancesArray[index];
+    }
+
+    if( sum<=(distanceLimit/2)){
+        return  "The revision needs to be done within the next 3 months";
+    }else if(sum<=(distanceLimit/1.25)){
+        return "The revision needs to be done within the next 2 months";
+    }else if(sum===distanceLimit||(sum>distanceLimit/1.25)){
+        return  "The revision needs to be done within the next month";
+    }else{
+        throw new Error("this not working ");
+    }
+
+}
+return{calculateNumberOfFlights,checkAircraftRevision};
 }
 
 module.exports = Flights();
